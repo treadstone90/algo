@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/4 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./D-String_Manipulation_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./D-String_Manipulation_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./D-String_Manipulation_files/custom.css">
+    <script type="text/javascript" src="./D-String_Manipulation_files/jquery.js"></script>
+    <script type="text/javascript" src="./D-String_Manipulation_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./D-String_Manipulation_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+<style type="text/css"></style></head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./D-String_Manipulation_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/1">A: Collatz
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/2">B: Binary Tape
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/3">C: T-Shirts
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./D-String_Manipulation_files/D-String_Manipulation.html">D: String manipulation
+                            <i class="icon-ok icon-white"></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/5">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/6">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/8">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        You've already solved this problem.
+                </div>
+        </div>
+        <div class="span7">
+                <h2>D: String manipulation</h2>
+                <div class="description"><p>﻿Given an input string and a desired output string, your task is to transform the input into the output in as few operations as possible.
+The two operations available to you are move and shift.</p>
+
+<ol>
+<li>move: You can move one character forward or backward 1 step through the alphabet (wrapping at the ends).
+ex: Given <code>abc</code>
+<ul>
+<li>The character <code>a</code> can be moved, yielding <code>bbc</code> or <code>zbc</code></li>
+<li>The character <code>b</code> can be moved, yielding <code>aac</code> or <code>acc</code> </li>
+<li>The character <code>c</code> can be moved, yielding <code>abb</code> or <code>abd</code></li>
+</ul></li>
+<li>shift: The entire string is shifted 1 step left or right (wrapping at the ends).
+ex: Given <code>xyz</code>
+<ul>
+<li>Shifted right, the string becomes <code>zxy</code></li>
+<li>Shifted left, the string becomes <code>yzx</code></li>
+</ul></li>
+</ol>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives <code>T</code>(1≦<code>T</code>≦100), the number of test cases.</li>
+<li><code>T</code> test cases follow.</li>
+<li>The first line of each test case gives <code>A</code>, the input string.</li>
+<li>The next line of each test case gives <code>B</code>, the desired output string.</li>
+<li>1 ≦ |<code>A</code>| = |<code>B</code>| ≦ 500</li>
+<li>Each character is a lowercase english letter, and <code>A</code> is guaranteed to be transformable to <code>B</code>, using the available operations.</li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, emit a line containing the number of steps to transform <code>A</code> into <code>B</code>, followed by a new line.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>2
+abcdefg
+bcdefga
+aa
+aa
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>1
+0
+</code></pre>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for D: String manipulation</h4></div>
+    <div id="clarifications">
+<div class="clarification unread">
+        <div class="question">
+            <strong>Question:</strong> Is the definition of the "move" operation correct?
+        </div>
+        <div class="answer"><strong>Answer:</strong> The wording was unclear and referred to moving "left and right" when it should have said "forward and backward". The problem statement has been updated to correct this.</div>
+        <div class="time">— Answered Feb 11, 2014 1:48:38 AM</div>
+    </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,8 @@
+recurrence
+
+
+F(Source, Destination, n) = Sum(F(neigh(source), destinatin , n-1))
+
+
+
+

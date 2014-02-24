@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/8 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./H-Slippery_Floor_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./H-Slippery_Floor_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./H-Slippery_Floor_files/custom.css">
+    <script type="text/javascript" src="./H-Slippery_Floor_files/jquery.js"></script>
+    <script type="text/javascript" src="./H-Slippery_Floor_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./H-Slippery_Floor_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+<style type="text/css"></style></head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./H-Slippery_Floor_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/1">A: Collatz
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/2">B: Binary Tape
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/3">C: T-Shirts
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/4">D: String manipulation
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/5">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/6">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./H-Slippery_Floor_files/H-Slippery_Floor.html">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        <form action="http://progexercise.dev.indeed.net/progcontest/attempt" method="POST">
+                            <input type="hidden" name="problemId" value="8">
+                            <input id="attemptButton" type="submit" class="btn" value="Solve this problem">
+
+                            <div>When you press this button, an input file will be generated. You will have to submit
+                            the corresponding output within <strong>4 minutes</strong>,
+                            or else your submission will be marked incorrect.
+                            </div>
+                        </form>
+                </div>
+        </div>
+        <div class="span7">
+                <h2>H: Slippery Floor</h2>
+                <div class="description"><p>﻿Tiles are arranged in a <code>N</code>x<code>M</code> grid.
+Because the surface of these tiles is so slippery, if you walk in a direction you will continue moving in that direction until you collide with an obstacle.
+Your task is to determine the number of combinations of start and end tiles such that you cannot reach (even in passing) the end tile from the start tile.</p>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives T (1≦T≦100), the number of test cases.</li>
+<li>T test cases follow.</li>
+<li>Each test case begins with a line containing <code>N</code> and <code>M</code>, the height and width of the room.</li>
+<li>1≦<code>N</code>,<code>M</code>≦50</li>
+<li>The next <code>N</code> lines give the layout of the room, with each line containing <code>M</code> characters indicating what occupies that position in the room
+<ol>
+<li>‘.’ represents an empty tile</li>
+<li>‘#’ represents an obstacle</li>
+</ol></li>
+<li>The room is guaranteed to be bordered by obstacles.</li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, output the number of combinations of start and end tiles such that you cannot reach the end tile from the start tile, followed by a new line.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>3
+7 8
+########
+#...#..#
+#...####
+#......#
+###....#
+###....#
+########
+5 5
+#####
+#.#.#
+#####
+#.#.#
+#####
+4 8
+########
+#......#
+#...#..#
+########
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>123
+12
+0
+</code></pre>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for H: Slippery Floor</h4></div>
+        <div>There have been no clarifications posted.</div>
+    <div id="clarifications">
+    </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

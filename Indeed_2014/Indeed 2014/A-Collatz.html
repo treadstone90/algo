@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./A-Collatz_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./A-Collatz_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./A-Collatz_files/custom.css">
+    <script type="text/javascript" src="./A-Collatz_files/jquery.js"></script><style type="text/css"></style>
+    <script type="text/javascript" src="./A-Collatz_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./A-Collatz_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+</head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./A-Collatz_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="./A-Collatz_files/A-Collatz.html">A: Collatz
+                            <i class="icon-ok icon-white"></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/2">B: Binary Tape
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/3">C: T-Shirts
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/4">D: String manipulation
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/5">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/6">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/8">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        You've already solved this problem.
+                </div>
+        </div>
+        <div class="span7">
+                <h2>A: Collatz</h2>
+                <div class="description"><p>﻿Consider the following function:</p>
+
+<p>Given a positive integer X:</p>
+
+<ul>
+<li>If X is even, X, divide X by 2.</li>
+<li>If X is odd, triple X and add 1.</li>
+</ul>
+
+<p>The stopping time of positive integer <code>N</code> is defined by the number of repetitions of this function to eventually reach the number 1.
+For example, the stopping time of 1 is 0 and the stopping time of 5 is 5 (5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1).</p>
+
+<p>The unproven Collatz Conjecture speculates that for every positive integer <code>N</code>, the process will eventually reach the number 1 (that is, every positive integer has a well-defined stopping time). </p>
+
+<p>Given an integer <code>N</code>, output the stopping time of <code>N</code>.</p>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives T (1≦T≦100), the number of test cases.</li>
+<li>T lines follow, each giving input <code>N</code> (2≦<code>N</code>≦10,000)</li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, output the stopping time of <code>N</code>, followed by a new line.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>4
+3
+47
+2
+10000
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>7
+104
+1
+29
+</code></pre>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for A: Collatz</h4></div>
+        <div>There have been no clarifications posted.</div>
+    <div id="clarifications">
+    </div>
+        </div>
+    </div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./E-Elections_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./E-Elections_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./E-Elections_files/custom.css">
+    <script type="text/javascript" src="./E-Elections_files/jquery.js"></script>
+    <script type="text/javascript" src="./E-Elections_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./E-Elections_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+<style type="text/css"></style></head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./E-Elections_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/1">A: Collatz
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/2">B: Binary Tape
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/3">C: T-Shirts
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/4">D: String manipulation
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./E-Elections_files/E-Elections.html">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/6">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/8">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        <form action="http://progexercise.dev.indeed.net/progcontest/attempt" method="POST">
+                            <input type="hidden" name="problemId" value="5">
+                            <input id="attemptButton" type="submit" class="btn" value="Solve this problem">
+
+                            <div>When you press this button, an input file will be generated. You will have to submit
+                            the corresponding output within <strong>4 minutes</strong>,
+                            or else your submission will be marked incorrect.
+                            </div>
+                        </form>
+                </div>
+        </div>
+        <div class="span7">
+                <h2>E: Elections</h2>
+                <div class="description"><p>﻿John has decided to run for president of his high school computer science club.
+The voters in the class have compiled rankings of the candidates they like. They will all vote for the earliest candidate on their list that is running.
+John has managed to acquire all of these lists.
+By using his charm and charisma, John can convince <code>K</code> candidates to stop running for election.
+What is the maximum number of votes that John can receive?</p>
+
+<p>Each candidate has a number assigned to them, and John is candidate number 1. We can represent each voter's preferences as an ordered list. If a voter's preferences are "2 1 3", that means John is their second choice -- after candidate #2, and before candidate #3.</p>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives <code>T</code> (1≦<code>T</code>≦100), the number of test cases</li>
+<li><code>T</code> test cases follow</li>
+<li>Each test case begins with three numbers, <code>M N K</code> (<code>M</code> * <code>N</code> ≦ 256).
+<ol>
+<li><code>M</code> is the number of candidates</li>
+<li><code>N</code> is the number of voters</li>
+<li><code>K</code> is the maximum number of individuals John can convince to not run</li>
+</ol></li>
+<li>This is followed by an <code>N</code> lines containing <code>M</code> space-separated integers, where the ith line is the ith voter’s order of preferences.</li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, output one line containing the maximum number of votes John can receive, followed by a new line.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>3
+7 5 3
+4 6 2 1 3 5 7
+2 1 3 4 5 6 7
+3 4 1 7 6 5 2
+3 2 1 7 6 5 4
+4 5 6 1 2 3 7
+1 3 0
+1
+1
+1
+12 18 3
+3 11 1 12 9 2 5 7 8 6 4 10
+4 5 6 3 9 12 10 8 7 1 11 2
+10 11 9 7 12 5 6 8 1 3 2 4
+3 9 11 1 6 12 7 10 2 4 5 8
+5 9 2 7 10 1 8 3 12 6 4 11
+5 3 12 7 1 2 10 11 4 9 8 6
+3 11 8 4 6 7 5 9 12 10 1 2
+3 5 9 2 1 10 8 7 6 4 11 12
+11 10 7 3 4 8 9 1 5 12 6 2
+5 6 8 10 4 9 3 7 2 12 1 11
+7 3 2 11 5 8 12 4 10 9 6 1
+9 10 6 2 11 5 8 7 3 1 4 12
+4 1 2 8 6 10 9 7 3 11 5 12
+8 6 7 4 12 11 2 1 10 5 3 9
+4 3 6 11 5 8 7 12 10 1 9 2
+1 7 8 11 12 3 9 4 6 5 10 2
+4 8 7 10 2 1 3 5 12 9 6 11
+1 8 2 4 10 5 12 9 7 3 6 11
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>3
+3
+4
+</code></pre>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for E: Elections</h4></div>
+        <div>There have been no clarifications posted.</div>
+    <div id="clarifications">
+    </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

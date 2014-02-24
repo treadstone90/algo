@@ -1,0 +1,70 @@
+body {
+    /* TODO is this worth adding to keep UI from shifting horizontally between pages? */
+     /*overflow-y: scroll;*/
+}
+
+
+.homepage-block h3 {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.todo {
+    text-decoration: line-through !important;
+}
+
+td.numeric, th.numeric {
+    text-align: right;
+}
+
+#attemptButton {
+    width: 100%;
+}
+
+#attemptButton:hover {
+    background-image: -webkit-linear-gradient(top, #EE5F5B, #BD362F);
+
+    background-image: linear-gradient(top, #EE5F5B, #BD362F);
+    background-color: #BD362F;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -webkit-transition: color, text-shadow, background-image, background-color, background-position .2s linear, top .2s ease-out;
+    transition: color, text-shadow, background-image, background-color, background-position .2s linear, top .2s ease-out;
+}
+
+.clarification {
+    margin: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.clarification .question {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.clarification .answer {
+    margin-bottom: 10px;
+}
+.clarification .time {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+a.unread {
+    font-weight: bold;
+}
+#allClarifications .unread {
+    background-color: #ffffdd;
+}
+
+#contestCountdown .timeRemaining {
+    font-weight: bold;
+    margin-right: 10px;
+    color: white;
+}
+
+#graduationSeason, #graduationYear {
+    width: 108px;
+}
+
+.nav i.icon-ok {
+    float: right;
+}

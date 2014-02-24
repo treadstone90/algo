@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./C-T_Shirts_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./C-T_Shirts_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./C-T_Shirts_files/custom.css">
+    <script type="text/javascript" src="./C-T_Shirts_files/jquery.js"></script>
+    <script type="text/javascript" src="./C-T_Shirts_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./C-T_Shirts_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+<style type="text/css"></style></head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./C-T_Shirts_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/1">A: Collatz
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/2">B: Binary Tape
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./C-T_Shirts_files/C-T_Shirts.html">C: T-Shirts
+                            <i class="icon-ok icon-white"></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/4">D: String manipulation
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/5">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/6">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/8">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        You've already solved this problem.
+                </div>
+        </div>
+        <div class="span7">
+                <h2>C: T-Shirts</h2>
+                <div class="description"><p>﻿There are shirts of three different sizes, small (S), medium (M), and large (L). 
+People also have size preferences corresponding to each shirt size.</p>
+
+<ul>
+<li>People who prefer S can wear all 3 sizes.</li>
+<li>People who prefer M can wear sizes M and L.</li>
+<li>People who prefer L can only wear size L.</li>
+</ul>
+
+<p>Given a set of preferences and a set of shirts, determine whether everyone can be given a shirt that they can wear.</p>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives <code>T</code> (1≦<code>T</code>≦100), the number of test cases.</li>
+<li><code>T</code> test cases follow.</li>
+<li>The first line of each test case gives the collection of shirt sizes available.</li>
+<li>The second line of each test case gives the collection of personal size preferences.</li>
+<li>The number of shirts and the number of people are always equal (call this number <code>N</code>), and 1≦<code>N</code>≦100.</li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, output YES if everyone can be given a shirt, or NO otherwise. Output a new line after each test case.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>3
+MMSLLLLLLSMS
+LSMMSLMSLLMS
+LLLLLLLLLLLLLL
+SSSSSSSSSSSSSS
+LLLSSLLLSSLLLLSS
+MSLLMLMSLMLMLMSM
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>YES
+YES
+NO
+</code></pre>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for C: T-Shirts</h4></div>
+        <div>There have been no clarifications posted.</div>
+    <div id="clarifications">
+    </div>
+        </div>
+    </div>
+</div>
+
+
+</body></html>

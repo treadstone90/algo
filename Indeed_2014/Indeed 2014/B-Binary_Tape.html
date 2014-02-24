@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./B-Binary_Tape_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./B-Binary_Tape_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./B-Binary_Tape_files/custom.css">
+    <script type="text/javascript" src="./B-Binary_Tape_files/jquery.js"></script><style type="text/css"></style>
+    <script type="text/javascript" src="./B-Binary_Tape_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./B-Binary_Tape_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+</head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./B-Binary_Tape_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/1">A: Collatz
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./B-Binary_Tape_files/B-Binary_Tape.html">B: Binary Tape
+                            <i class="icon-ok icon-white"></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/3">C: T-Shirts
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/4">D: String manipulation
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/5">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/6">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/8">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        You've already solved this problem.
+                </div>
+        </div>
+        <div class="span7">
+                <h2>B: Binary Tape</h2>
+                <div class="description"><p>﻿You have a binary tape, with 0s and 1s written on it. 
+You can cut the tape in between any digits to result in a larger number of shorter binary tapes.
+The value of a piece of tape is defined as its interpretation as an unsigned base two integer.</p>
+
+<p>We also define a valid segment to be segment of tape whose value is at least <code>N</code>.
+Given a piece of tape and a positive integer <code>N</code>, what is the largest number of valid segments you can cut it into?</p>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives <code>T</code> (1≦<code>T</code>≦100), the number of test cases.</li>
+<li><code>T</code> test cases follow.</li>
+<li>Each test case consists of two lines. The first line gives <code>N</code>, the minimum value of a valid piece of tape. The second line gives <code>S</code>, a binary string of length between 1 and 100 digits, representing the tape.</li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, output the maximum number of valid segments the tape can be cut in to, followed by a new line.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>5
+32
+10101100110011000101101010110110
+1
+1010101010111010101010101
+99
+11111111111101111111111111110111111111110111111111111
+18
+111110111110110100000000000000011111111101011111111000101
+3
+10
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>4
+14
+7
+7
+0
+</code></pre>
+
+<h1>Explanation: </h1>
+
+<p>10101100110011000101101010110110</p>
+
+<p>Cut optimally so that its the most pieces.
+If cut as the above:
+1. 101011
+2. 00110011
+3. 000101101
+4. 010110110
+Four valid pieces of tape can be created.</p>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for B: Binary Tape</h4></div>
+        <div>There have been no clarifications posted.</div>
+    <div id="clarifications">
+    </div>
+        </div>
+    </div>
+</div>
+
+
+</body></html>

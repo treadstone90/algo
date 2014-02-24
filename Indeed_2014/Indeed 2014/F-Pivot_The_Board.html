@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://progexercise.dev.indeed.net/progcontest/problems/6 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://progexercise.dev.indeed.net/progcontest/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./F-Pivot_The_Board_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./F-Pivot_The_Board_files/custom.css">
+    <link rel="stylesheet" type="text/css" href="./F-Pivot_The_Board_files/custom.css">
+    <script type="text/javascript" src="./F-Pivot_The_Board_files/jquery.js"></script>
+    <script type="text/javascript" src="./F-Pivot_The_Board_files/bootstrap.js"></script>
+    <script type="text/javascript" src="./F-Pivot_The_Board_files/timer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#contestCountdown").countdownTimer({
+                endpoint: "/progcontest/api/timeRemaining/contest"
+            });
+        })
+    </script>
+    <title>Indeed Coding Duel</title>
+<style type="text/css"></style></head>
+<body style="">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="http://progexercise.dev.indeed.net/progcontest/">
+                <img id="headerLogo" src="./F-Pivot_The_Board_files/logo.png"> Coding Duel
+            </a>
+            <ul class="nav">
+                        <li class="active"><a href="http://progexercise.dev.indeed.net/progcontest/problems">Problems</a></li>
+
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/submissions">My Submissions</a></li>
+
+            </ul>
+            <ul class="nav pull-right">
+                    <li class="navbar-text" id="contestCountdown">
+                        <span class="countdownLabel">Time remaining</span>:
+                        <span class="timeRemaining">contest has ended</span>
+                    </li>
+                <li class="divider-vertical"></li>
+                        <li><a href="http://progexercise.dev.indeed.net/progcontest/profile">Profile</a></li>
+
+                    <li><a href="http://progexercise.dev.indeed.net/progcontest/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" style="max-width: 250px;">
+            <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/1">A: Collatz
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/2">B: Binary Tape
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/3">C: T-Shirts
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/4">D: String manipulation
+                            <i class="icon-ok "></i>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/5">E: Elections
+                            
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./F-Pivot_The_Board_files/F-Pivot_The_Board.html">F: Pivot the Board
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/7">G: Gathering Diamonds
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/8">H: Slippery Floor
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/9">I: Tower of coins
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="http://progexercise.dev.indeed.net/progcontest/problems/10">J: Tea cups
+                            
+                        </a>
+                    </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-stacked">
+    <li>                    <a href="http://progexercise.dev.indeed.net/progcontest/problems/clarifications" class="read">
+                        Clarifications 
+                    </a>
+</li>
+            </ul>
+
+                <hr>
+
+                <div id="problemStatus" class="well">
+                        <form action="http://progexercise.dev.indeed.net/progcontest/attempt" method="POST">
+                            <input type="hidden" name="problemId" value="6">
+                            <input id="attemptButton" type="submit" class="btn" value="Solve this problem">
+
+                            <div>When you press this button, an input file will be generated. You will have to submit
+                            the corresponding output within <strong>4 minutes</strong>,
+                            or else your submission will be marked incorrect.
+                            </div>
+                        </form>
+                </div>
+        </div>
+        <div class="span7">
+                <h2>F: Pivot the Board</h2>
+                <div class="description"><p>﻿You have been challenged to a high-stakes game of Pivot the Board (not a real game) and want to determine if you can force a win (that is, win regardless of how the opponent plays).</p>
+
+<p>Pivot the Board plays as follows:</p>
+
+<ol>
+<li>The game takes place in turns. One player controls the board, the other player controls the pieces on the board. You are controlling the pieces, and you have the first turn.</li>
+<li>The 9x9 board begins with pieces arbitrarily distributed.</li>
+<li>On your turn, you may choose a piece on the board and move it one space upward (or otherwise pass).</li>
+<li>On your opponent’s turn, the opponent may rotate the board 90 degrees clockwise or counterclockwise (or otherwise pass).</li>
+<li>If one of your pieces ever reaches the center location on the board, you win.</li>
+</ol>
+
+<h1>Input:</h1>
+
+<ol>
+<li>The first line gives <code>T</code> (1≦<code>T</code>≦100), the number of test cases.</li>
+<li><code>T</code> test cases follow.</li>
+<li>Each test case contains 9 lines of 9 characters each, describing the initial state of the board. 
+<ol>
+<li>Lines are given from the top of the board to the bottom of the board.</li>
+<li>A ‘.’ represents an empty space, and a ‘o’ represents a space with a piece in it.</li>
+</ol></li>
+</ol>
+
+<h1>Output:</h1>
+
+<p>For each test case, output <code>YES</code> if you can guarantee a win, and <code>NO</code> otherwise. Follow each test case with a new line.</p>
+
+<h1>Sample input:</h1>
+
+<pre><code>3
+.........
+....o....
+.........
+.o.......
+.......o.
+.........
+o........
+....o....
+.........
+.........
+.........
+....o....
+......o..
+...o...o.
+.........
+o........
+..o......
+.........
+.........
+..ooooo..
+.o.....o.
+.o.....o.
+o......o.
+o......o.
+oo....o..
+..oooo...
+.........
+</code></pre>
+
+<h1>Sample output:</h1>
+
+<pre><code>NO
+NO
+YES
+</code></pre>
+</div>
+        </div>
+        <div class="span2">
+    <div style="text-align: center;"><h4>Clarifications for F: Pivot the Board</h4></div>
+    <div id="clarifications">
+<div class="clarification unread">
+        <div class="question">
+            <strong>Question:</strong> en: Can two pieces be piled up at the same position? Is the position of each piece mutually exclusive? ja: ピースは互い独立しているか、重ねることが可能かどうか？
+        </div>
+        <div class="answer"><strong>Answer:</strong> en: No, there can be at most one piece in each position on the board at any time. ja: いいえ、それぞれの場所には最大１つまでしかピースを置けません。</div>
+        <div class="time">— Answered Feb 11, 2014 1:25:39 AM</div>
+    </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>
