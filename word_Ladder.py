@@ -4,31 +4,63 @@
 from collections import defaultdict
 from collections import deque
 
+
 class Solution:
     def ladderLength(self, start, end, dict_):
+        
         BFS_queue = deque()
         graph_explore = deque()
 
         for word in dict_:
             graph_explore.append(word)
 
-
-        BFS_queue.append(object)
+        graph_explore.append(start)
+        graph_explore.append(end)
+        BFS_queue.append(start)
         visited = defaultdict(bool)
+        edgeTo = {} 
+        edgeTo[start] = ""
 
-        while len(BFS_queue)  == 0:
+        success = False
+
+        while len(BFS_queue)  != 0:
             node = BFS_queue.popleft()
 
+            if node == end:
+                success = True
+                break
             limit = len(graph_explore)
             i = 0
 
             while i < limit:
-                word = BFS_queue.popleft()
-                if self.isDistOne(word, node) == True:
-                    visited
+                word = graph_explore.popleft()
+                if word == node:
+                    i +=1 
+                    continue
+
+                elif self.isDistOne(word, node) == True:
+                    visited[word] = True
+                    edgeTo[word] = node
                     BFS_queue.append(word)
                 else:
                     graph_explore.append(word)
+
+                i += 1
+
+
+        if success == False:
+            return 0
+        else:
+            result = []
+            w = edgeTo[word]
+            while w != "":
+                result.append(w)
+                w = edgeTo[w]
+
+            return result
+
+
+
 
 
 
@@ -52,6 +84,7 @@ class Solution:
 
 
 def main():
-    pass
+    s = Solution()
+    print s.ladderLength("hit","cog",["hot","dot","dog","lot","log"])
 if __name__ == '__main__':
     main()
