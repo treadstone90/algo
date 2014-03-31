@@ -1,6 +1,3 @@
-# words in a queue 
-# have two qeueues. One for nodes that are in the normal BFS queue and need to be explored
-# Another for nodes that are yet to be added to the graph
 from collections import defaultdict
 from collections import deque
 
@@ -16,8 +13,10 @@ class Solution:
 
         graph_explore.append(start)
         graph_explore.append(end)
+
         BFS_queue.append(start)
         visited = defaultdict(bool)
+
         edgeTo = {} 
         edgeTo[start] = ""
 
@@ -52,16 +51,12 @@ class Solution:
             return 0
         else:
             result = []
-            w = edgeTo[word]
+            w = end
             while w != "":
                 result.append(w)
                 w = edgeTo[w]
 
             return result
-
-
-
-
 
 
     def isDistOne(self,w1,w2):
@@ -86,5 +81,9 @@ class Solution:
 def main():
     s = Solution()
     print s.ladderLength("hit","cog",["hot","dot","dog","lot","log"])
+    print s.ladderLength("hit","dop",["hot","dot","dog","lot","log"])
+    print s.ladderLength("hit","hoh",["hot","dot","dog","lot","log"])
+    print s.ladderLength("hit","dzt",["hot","dot","dog","lot","log"])
+    print s.ladderLength("a","c",["a","b","c"])
 if __name__ == '__main__':
     main()
