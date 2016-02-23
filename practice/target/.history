@@ -1,3 +1,11 @@
 run
 run Judge
 run ?
+compile
+update
+compile
+update
+sbt clean
+clean
+update
+compile

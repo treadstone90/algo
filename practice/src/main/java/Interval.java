@@ -9,4 +9,14 @@ public class Interval {
         this.start = start;
         this.end = end;
     }
+
+    public int size = end - start +1 ;
+
+    public void setEnd(int a) {
+        this.end = a;
+    }
+
+    public void setStart(int a) {
+        this.start = a;
+    }
 }

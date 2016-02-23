@@ -16,7 +16,7 @@
 [debug] == resolving dependencies for default#practice-build;0.1-SNAPSHOT [provided]
 [debug] == resolving dependencies default#practice-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@381240cc
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@60a7dd60
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4
 [debug] 	found org.scala-lang#scala-library;2.10.4 in sbt-chain
 [debug] 	[2.10.4] org.scala-lang#scala-library;2.10.4
@@ -1766,7 +1766,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 1485ms :: artifacts dl 50ms
+[debug] :: resolution report :: resolve 2608ms :: artifacts dl 98ms
 [debug] 	report for default#practice-build;0.1-SNAPSHOT compile produced in /Users/karthik/Development/algo/practice/project/target/resolution-cache/reports/default-practice-build-compile.xml
 [debug] 	report for default#practice-build;0.1-SNAPSHOT runtime produced in /Users/karthik/Development/algo/practice/project/target/resolution-cache/reports/default-practice-build-runtime.xml
 [debug] 	report for default#practice-build;0.1-SNAPSHOT test produced in /Users/karthik/Development/algo/practice/project/target/resolution-cache/reports/default-practice-build-test.xml
@@ -1780,5 +1780,5 @@
 [debug] 	report for default#practice-build;0.1-SNAPSHOT docs produced in /Users/karthik/Development/algo/practice/project/target/resolution-cache/reports/default-practice-build-docs.xml
 [debug] 	report for default#practice-build;0.1-SNAPSHOT pom produced in /Users/karthik/Development/algo/practice/project/target/resolution-cache/reports/default-practice-build-pom.xml
 [debug] 	report for default#practice-build;0.1-SNAPSHOT scala-tool produced in /Users/karthik/Development/algo/practice/project/target/resolution-cache/reports/default-practice-build-scala-tool.xml
-[debug] 	resolve done (1485ms resolve - 50ms download)
+[debug] 	resolve done (2608ms resolve - 98ms download)
 [info] Done updating.

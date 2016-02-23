@@ -3,13 +3,28 @@
 [0m[[0mdebug[0m] [0m	removed:Set()[0m
 [0m[[0mdebug[0m] [0m	added: Set()[0m
 [0m[[0mdebug[0m] [0m	modified: Set()[0m
-[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set(/Users/karthik/Development/algo/practice/target/scala-2.11/classes/TreeNode.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/Solutions$.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/TreeNode$.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/Solutions$$anonfun$deDupeString$1.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/Solutions.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/Judge.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/Judge$.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/Solutions$$anonfun$deDupeString$2.class, /Users/karthik/Development/algo/practice/target/scala-2.11/classes/TreeOperations.class)[0m
 [0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
 [0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
-[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	product: Set(/Users/karthik/Development/algo/practice/src/main/scala/Tree.scala, /Users/karthik/Development/algo/practice/src/main/scala/Solutions.scala, /Users/karthik/Development/algo/practice/src/main/scala/Judge.scala)[0m
 [0m[[0mdebug[0m] [0m	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/karthik/Development/algo/practice/src/main/scala/Solutions.scala, /Users/karthik/Development/algo/practice/src/main/scala/Judge.scala, /Users/karthik/Development/algo/practice/src/main/scala/Tree.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 3 Scala sources to /Users/karthik/Development/algo/practice/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.7[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.7[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 5d9d2759, interfacing (CompilerInterface) with Scala compiler version 2.11.7[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/classes:/Users/karthik/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/karthik/Development/algo/practice/target/scala-2.11/classes[0m
+[0m[[31merror[0m] [0m/Users/karthik/Development/algo/practice/src/main/scala/Judge.scala:8: not found: type DNF[0m
+[0m[[31merror[0m] [0m    val dnf = new DNF()[0m
+[0m[[31merror[0m] [0m                  ^[0m
+[0m[[31merror[0m] [0mone error found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m

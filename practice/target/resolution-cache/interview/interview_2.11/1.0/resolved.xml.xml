@@ -4,7 +4,7 @@
 		module="interview_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160109233654"
+		publication="20160207235005"
 	>
 		<description>
 		Interview
@@ -27,7 +27,9 @@
 	</configurations>
 	<publications>
 		<artifact name="interview_2.11" type="pom" ext="pom" conf="pom"/>
-		<artifact name="interview_2.11" type="jar" ext="jar" conf="optional" e:classifier="download, resolveSbtClassifiers"/>
+		<artifact name="interview_2.11" type="jar" ext="jar" conf="compile"/>
+		<artifact name="interview_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="interview_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.7" conf="scala-tool->default,optional(default)"/>
