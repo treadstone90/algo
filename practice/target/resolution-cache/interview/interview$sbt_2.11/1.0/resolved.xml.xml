@@ -4,7 +4,7 @@
 		module="interview$sbt_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160219233501"
+		publication="20160323003355"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>
